@@ -9,3 +9,17 @@
 # value types according to the spec
 
 # !!! Before you run rake db:migrate, remember to fill out the other migration files -- otherwise you'll get an error resulting from the blank migration files.
+
+class CreateCostumes < ActiveRecord::Migration[6.0]
+
+    def change
+        create_table :costumes do |p|
+            p.string :name
+            p.string :size
+            p.string :image_url
+            p.float :price
+            
+            p.timestamps null: false
+        end
+    end
+end
